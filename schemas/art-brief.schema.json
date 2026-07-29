@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meaningframe.com/schemas/art-brief.schema.json",
+  "title": "MEANINGFRAME Art Brief",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "meaningMapVersionId",
+    "artWorld",
+    "outputMode",
+    "identity",
+    "emotionalCore",
+    "primarySymbols",
+    "supportingMotifs",
+    "composition",
+    "colourAndLight",
+    "quality",
+    "identityPreservation",
+    "exclusions",
+    "evidenceLinks"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "meaningMapVersionId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "artWorld": {
+      "type": "string",
+      "enum": ["poetic_symbolism", "modern_essence", "narrative_collage"]
+    },
+    "outputMode": {
+      "type": "string",
+      "enum": ["premium_raster", "native_vector"]
+    },
+    "identity": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1200
+    },
+    "emotionalCore": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 600
+    },
+    "primarySymbols": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "items": {
+        "$ref": "#/$defs/visualElement"
+      }
+    },
+    "supportingMotifs": {
+      "type": "array",
+      "maxItems": 2,
+      "items": {
+        "$ref": "#/$defs/visualElement"
+      }
+    },
+    "composition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["focalPoint", "subjectPlacement", "depth", "safeCrop"],
+      "properties": {
+        "focalPoint": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "subjectPlacement": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "depth": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "safeCrop": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        }
+      }
+    },
+    "colourAndLight": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["palette", "lighting", "contrast"],
+      "properties": {
+        "palette": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 8,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 50
+          }
+        },
+        "lighting": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "contrast": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        }
+      }
+    },
+    "quality": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 600
+    },
+    "identityPreservation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["referenceAssetIds", "recognisabilityTarget", "doNotAlter"],
+      "properties": {
+        "referenceAssetIds": {
+          "type": "array",
+          "maxItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          }
+        },
+        "recognisabilityTarget": {
+          "type": "string",
+          "enum": ["artistic_recognisable"]
+        },
+        "doNotAlter": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          }
+        }
+      }
+    },
+    "exclusions": {
+      "type": "array",
+      "maxItems": 20,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 240
+      }
+    },
+    "evidenceLinks": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["visualDecision", "meaningMapPath"],
+        "properties": {
+          "visualDecision": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 240
+          },
+          "meaningMapPath": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 240
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "visualElement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["element", "meaning", "integration"],
+      "properties": {
+        "element": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "meaning": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "integration": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        }
+      }
+    }
+  }
+}

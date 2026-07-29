@@ -1,0 +1,11 @@
+Read every file under docs/product/ completely and treat the package as the authoritative MEANINGFRAME product specification.
+
+Then execute Phase 0 from docs/product/13_IMPLEMENTATION_PHASES.md only.
+
+Do not implement product features, create production resources, activate paid services or deploy to production.
+
+Inspect the repository, verify current official documentation and stable versions, map every requirement to a phase/test, create all required docs/implementation/ records, identify credentials/vendor/business inputs and deliver a concise READY / NOT READY Phase 0 evidence report.
+
+Preserve all binding decisions in docs/product/DECISION_REGISTER.md.
+
+Stop after Phase 0. Do not begin Phase 1 without my explicit approval.
