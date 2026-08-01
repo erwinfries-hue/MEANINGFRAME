@@ -47,4 +47,8 @@ These are areas where `DECISION_REGISTER.md` fixes the direction but the package
 
 ## Resolution log
 
-_(Empty — decisions will be appended here with date and founder statement as they are answered.)_
+### 2026-08-01 — Q-001, Q-003, Q-004
+
+Founder confirmed: none of domain registration, AXIA4 legal-entity documentation, or technical vendor accounts (Vercel, Supabase, Stripe, Anthropic, Recraft, Resend, Inngest) exist yet. GitHub repository is the only asset currently in place.
+
+This does not block Phase 0. Per `FOUNDER_HANDOFF.md` §2, accounts are created progressively; Phase 0's job is to produce the exact timing/order for each. Domain (Q-001) and legal entity (Q-002) are required before Phase 8 (production launch) at the latest, and legal entity details are needed earlier for placeholder Terms/Privacy/Imprint copy in Phase 1/7. Status: OPEN, not currently blocking, revisit before Phase 1 exit and again before Phase 7.
